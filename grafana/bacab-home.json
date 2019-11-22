@@ -203,7 +203,7 @@
       "fill": 1,
       "fillGradient": 1,
       "gridPos": {
-        "h": 9,
+        "h": 10,
         "w": 8,
         "x": 0,
         "y": 3
@@ -374,7 +374,7 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 9,
+        "h": 10,
         "w": 8,
         "x": 8,
         "y": 3
@@ -411,7 +411,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "Mom Television",
+          "alias": "Xmas",
           "groupBy": [
             {
               "params": [
@@ -538,6 +538,49 @@
               "value": "wemo_switch_03_current_power_w"
             }
           ]
+        },
+        {
+          "alias": "Washing Machine",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "W",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "entity_id",
+              "operator": "=",
+              "value": "wemo_switch_04_current_power_w"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -591,7 +634,7 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 9,
+        "h": 10,
         "w": 8,
         "x": 16,
         "y": 3
@@ -626,7 +669,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "Mom Television",
+          "alias": "Xmas",
           "groupBy": [
             {
               "params": [
@@ -753,6 +796,49 @@
               "value": "wemo_switch_03_today_energy_kwh"
             }
           ]
+        },
+        {
+          "alias": "Washing Machine",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "kWh",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "entity_id",
+              "operator": "=",
+              "value": "wemo_switch_04_today_energy_kwh"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -806,10 +892,10 @@
       "fill": 1,
       "fillGradient": 1,
       "gridPos": {
-        "h": 10,
+        "h": 12,
         "w": 8,
         "x": 0,
-        "y": 12
+        "y": 13
       },
       "id": 22,
       "legend": {
@@ -876,7 +962,7 @@
             {
               "key": "entity_id",
               "operator": "=",
-              "value": "house_lights_on_today"
+              "value": "all_lights_on_today"
             }
           ]
         },
@@ -919,7 +1005,7 @@
             {
               "key": "entity_id",
               "operator": "=",
-              "value": "house_lights_on_yesterday"
+              "value": "all_lights_on_yesterday"
             }
           ]
         }
@@ -975,10 +1061,10 @@
       "fill": 1,
       "fillGradient": 1,
       "gridPos": {
-        "h": 10,
+        "h": 12,
         "w": 8,
         "x": 8,
-        "y": 12
+        "y": 13
       },
       "id": 24,
       "legend": {
@@ -1045,7 +1131,7 @@
             {
               "key": "entity_id",
               "operator": "=",
-              "value": "house_motion_on_today"
+              "value": "all_motion_on_today"
             }
           ]
         },
@@ -1132,6 +1218,49 @@
               "key": "entity_id",
               "operator": "=",
               "value": "hue_motion_sensor_02_motion_on_today"
+            }
+          ]
+        },
+        {
+          "alias": "Front Yard",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "h",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "entity_id",
+              "operator": "=",
+              "value": "hue_outdoor_motion_sensor_01_motion_on_today"
             }
           ]
         },
@@ -1230,10 +1359,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 10,
+        "h": 12,
         "w": 8,
         "x": 16,
-        "y": 12
+        "y": 13
       },
       "id": 14,
       "legend": {
@@ -1356,10 +1485,10 @@
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 10,
+        "h": 11,
         "w": 8,
         "x": 0,
-        "y": 22
+        "y": 25
       },
       "id": 16,
       "legend": {
@@ -1475,6 +1604,49 @@
           ]
         },
         {
+          "alias": "Front Yard",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "°C",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "entity_id",
+              "operator": "=",
+              "value": "hue_outdoor_motion_sensor_01_temperature"
+            }
+          ]
+        },
+        {
           "alias": "Dark Sky",
           "groupBy": [
             {
@@ -1569,10 +1741,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 10,
+        "h": 11,
         "w": 8,
         "x": 8,
-        "y": 22
+        "y": 25
       },
       "id": 6,
       "legend": {
@@ -1689,6 +1861,49 @@
               "value": "hue_motion_sensor_02_light_level"
             }
           ]
+        },
+        {
+          "alias": "Front Yard",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lx",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "entity_id",
+              "operator": "=",
+              "value": "hue_outdoor_motion_sensor_01_light_level"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -1742,10 +1957,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 10,
+        "h": 11,
         "w": 8,
         "x": 16,
-        "y": 22
+        "y": 25
       },
       "id": 12,
       "legend": {
@@ -1872,7 +2087,7 @@
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 32
+        "y": 36
       },
       "id": 8,
       "legend": {
@@ -2042,7 +2257,7 @@
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 32
+        "y": 36
       },
       "id": 20,
       "legend": {
@@ -2211,7 +2426,7 @@
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 32
+        "y": 36
       },
       "id": 28,
       "legend": {
@@ -2380,7 +2595,7 @@
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 40
+        "y": 44
       },
       "id": 10,
       "legend": {
@@ -2551,7 +2766,7 @@
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 40
+        "y": 44
       },
       "id": 27,
       "legend": {
@@ -2758,7 +2973,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 40
+        "y": 44
       },
       "id": 26,
       "links": [],
@@ -3152,7 +3367,7 @@
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 48
+        "y": 52
       },
       "id": 34,
       "legend": {
@@ -3322,7 +3537,7 @@
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 48
+        "y": 52
       },
       "id": 36,
       "legend": {
@@ -3489,7 +3704,7 @@
     "list": []
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {
@@ -3520,5 +3735,5 @@
   "timezone": "",
   "title": "Bacab Home",
   "uid": "2o7C42cZk",
-  "version": 46
+  "version": 52
 }
