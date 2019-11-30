@@ -893,7 +893,7 @@
       "fillGradient": 1,
       "gridPos": {
         "h": 12,
-        "w": 8,
+        "w": 12,
         "x": 0,
         "y": 13
       },
@@ -1062,8 +1062,8 @@
       "fillGradient": 1,
       "gridPos": {
         "h": 12,
-        "w": 8,
-        "x": 8,
+        "w": 12,
+        "x": 12,
         "y": 13
       },
       "id": 24,
@@ -1360,9 +1360,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 12,
-        "w": 8,
-        "x": 16,
-        "y": 13
+        "w": 12,
+        "x": 0,
+        "y": 25
       },
       "id": 14,
       "legend": {
@@ -1482,13 +1482,140 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 12,
+        "y": 25
+      },
+      "id": 12,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null as zero",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "Wio Link 02",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "Dust",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "entity_id",
+              "operator": "=",
+              "value": "wio_link_02_dust"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Dust",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transparent": true,
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 11,
+        "h": 19,
         "w": 8,
         "x": 0,
-        "y": 25
+        "y": 37
       },
       "id": 16,
       "legend": {
@@ -1561,7 +1688,7 @@
           ]
         },
         {
-          "alias": "Upstairs",
+          "alias": "Living Room",
           "groupBy": [
             {
               "params": [
@@ -1643,6 +1770,92 @@
               "key": "entity_id",
               "operator": "=",
               "value": "hue_outdoor_motion_sensor_01_temperature"
+            }
+          ]
+        },
+        {
+          "alias": "Mom Room",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "°C",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "entity_id",
+              "operator": "=",
+              "value": "lumi_lumi_weather_fb246b03_temperature"
+            }
+          ]
+        },
+        {
+          "alias": "Dad Room",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "°C",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "entity_id",
+              "operator": "=",
+              "value": "lumi_lumi_weather_5ac24603_temperature"
             }
           ]
         },
@@ -1734,6 +1947,222 @@
     },
     {
       "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "decimals": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 19,
+        "w": 8,
+        "x": 8,
+        "y": 37
+      },
+      "id": 38,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": false,
+      "linewidth": 1,
+      "nullPointMode": "null as zero",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "Front Yard",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "binary_sensor.hue_outdoor_motion_sensor_01_motion",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "state"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "entity_id",
+              "operator": "=",
+              "value": "hue_outdoor_motion_sensor_01_motion"
+            }
+          ]
+        },
+        {
+          "alias": "Downstairs",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "binary_sensor.hue_motion_sensor_01_motion",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "entity_id",
+              "operator": "=",
+              "value": "hue_motion_sensor_01_motion"
+            }
+          ]
+        },
+        {
+          "alias": "Upstairs",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "binary_sensor.hue_motion_sensor_02_motion",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "entity_id",
+              "operator": "=",
+              "value": "hue_motion_sensor_02_motion"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Motion",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transparent": true,
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -1741,10 +2170,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 11,
+        "h": 19,
         "w": 8,
-        "x": 8,
-        "y": 25
+        "x": 16,
+        "y": 37
       },
       "id": 6,
       "legend": {
@@ -1955,139 +2384,12 @@
       "dashes": false,
       "datasource": null,
       "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 11,
-        "w": 8,
-        "x": 16,
-        "y": 25
-      },
-      "id": 12,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null as zero",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "Wio Link 02",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "Dust",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "entity_id",
-              "operator": "=",
-              "value": "wio_link_02_dust"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Dust",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 1,
       "fillGradient": 1,
       "gridPos": {
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 36
+        "y": 56
       },
       "id": 8,
       "legend": {
@@ -2257,7 +2559,7 @@
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 36
+        "y": 56
       },
       "id": 20,
       "legend": {
@@ -2426,7 +2728,7 @@
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 36
+        "y": 56
       },
       "id": 28,
       "legend": {
@@ -2595,7 +2897,7 @@
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 44
+        "y": 64
       },
       "id": 10,
       "legend": {
@@ -2766,7 +3068,7 @@
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 44
+        "y": 64
       },
       "id": 27,
       "legend": {
@@ -2973,7 +3275,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 44
+        "y": 64
       },
       "id": 26,
       "links": [],
@@ -3367,7 +3669,7 @@
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 52
+        "y": 72
       },
       "id": 34,
       "legend": {
@@ -3537,7 +3839,7 @@
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 52
+        "y": 72
       },
       "id": 36,
       "legend": {
@@ -3704,7 +4006,7 @@
     "list": []
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -3735,5 +4037,5 @@
   "timezone": "",
   "title": "Bacab Home",
   "uid": "2o7C42cZk",
-  "version": 52
+  "version": 57
 }
