@@ -1572,5 +1572,642 @@
                 "4514d0f7.af7668"
             ]
         ]
+    },
+    {
+        "id": "e0f6b9.e94fb948",
+        "type": "mqtt out",
+        "z": "a27c6d59.02601",
+        "name": "Communication",
+        "topic": "smarthome/frontyard/battery/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "83d51445.855118",
+        "type": "ui_slider",
+        "z": "a27c6d59.02601",
+        "name": "",
+        "label": "Battery",
+        "tooltip": "",
+        "group": "737e47e.0c40cb8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 320,
+        "wires": [
+            [
+                "e0f6b9.e94fb948",
+                "4b2918ed.ed5008"
+            ]
+        ]
+    },
+    {
+        "id": "2c3f9b0f.f7a91c",
+        "type": "function",
+        "z": "a27c6d59.02601",
+        "name": "Battery",
+        "func": "random = Math.floor ( Math.random() * (100-90) + 90)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 380,
+        "wires": [
+            [
+                "4b2918ed.ed5008",
+                "e0f6b9.e94fb948"
+            ]
+        ]
+    },
+    {
+        "id": "4b2918ed.ed5008",
+        "type": "debug",
+        "z": "a27c6d59.02601",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "a646f19a.3f066",
+        "type": "inject",
+        "z": "a27c6d59.02601",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "2c3f9b0f.f7a91c"
+            ]
+        ]
+    },
+    {
+        "id": "4515a916.a7d55",
+        "type": "mqtt out",
+        "z": "cc9bf7ba.a07ab8",
+        "name": "Communication",
+        "topic": "smarthome/masterbedroom/battery/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "68cd8fef.5f5df",
+        "type": "ui_slider",
+        "z": "cc9bf7ba.a07ab8",
+        "name": "",
+        "label": "Battery",
+        "tooltip": "",
+        "group": "2e3e094d.cfa58e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 320,
+        "wires": [
+            [
+                "4515a916.a7d55",
+                "4779a304.c7814c"
+            ]
+        ]
+    },
+    {
+        "id": "b633da17.851c18",
+        "type": "function",
+        "z": "cc9bf7ba.a07ab8",
+        "name": "Battery",
+        "func": "random = Math.floor ( Math.random() * (100-90) + 90)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 380,
+        "wires": [
+            [
+                "4779a304.c7814c",
+                "4515a916.a7d55"
+            ]
+        ]
+    },
+    {
+        "id": "4779a304.c7814c",
+        "type": "debug",
+        "z": "cc9bf7ba.a07ab8",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "538d40e4.05526",
+        "type": "inject",
+        "z": "cc9bf7ba.a07ab8",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "b633da17.851c18"
+            ]
+        ]
+    },
+    {
+        "id": "86817e39.95e3d",
+        "type": "mqtt out",
+        "z": "5c675851.04b6a",
+        "name": "Communication",
+        "topic": "smarthome/bathroom/battery/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "cc859106.a2ff6",
+        "type": "ui_slider",
+        "z": "5c675851.04b6a",
+        "name": "",
+        "label": "Battery",
+        "tooltip": "",
+        "group": "79e92fc7.5f583",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 320,
+        "wires": [
+            [
+                "86817e39.95e3d",
+                "5a6161b6.0ff208"
+            ]
+        ]
+    },
+    {
+        "id": "a37b3888.e555a8",
+        "type": "function",
+        "z": "5c675851.04b6a",
+        "name": "Battery",
+        "func": "random = Math.floor ( Math.random() * (100-90) + 90)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 380,
+        "wires": [
+            [
+                "5a6161b6.0ff208",
+                "86817e39.95e3d"
+            ]
+        ]
+    },
+    {
+        "id": "5a6161b6.0ff208",
+        "type": "debug",
+        "z": "5c675851.04b6a",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "eb572b14.37841",
+        "type": "inject",
+        "z": "5c675851.04b6a",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "a37b3888.e555a8"
+            ]
+        ]
+    },
+    {
+        "id": "1960e940.72a117",
+        "type": "mqtt out",
+        "z": "f6d725c.4322a58",
+        "name": "Communication",
+        "topic": "smarthome/guestbedroom/battery/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "dc6e5aa.972e6a8",
+        "type": "ui_slider",
+        "z": "f6d725c.4322a58",
+        "name": "",
+        "label": "Battery",
+        "tooltip": "",
+        "group": "37f1d1b8.7229fe",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 320,
+        "wires": [
+            [
+                "1960e940.72a117",
+                "d9a2300d.234fb"
+            ]
+        ]
+    },
+    {
+        "id": "92bc98ec.0ec2b8",
+        "type": "function",
+        "z": "f6d725c.4322a58",
+        "name": "Battery",
+        "func": "random = Math.floor ( Math.random() * (100-90) + 90)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 380,
+        "wires": [
+            [
+                "d9a2300d.234fb",
+                "1960e940.72a117"
+            ]
+        ]
+    },
+    {
+        "id": "d9a2300d.234fb",
+        "type": "debug",
+        "z": "f6d725c.4322a58",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "b08b5939.d71948",
+        "type": "inject",
+        "z": "f6d725c.4322a58",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "92bc98ec.0ec2b8"
+            ]
+        ]
+    },
+    {
+        "id": "e9d4ee6c.12156",
+        "type": "mqtt out",
+        "z": "ecbcd336.7102c8",
+        "name": "Communication",
+        "topic": "smarthome/kitchen/battery/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "70f24112.aa5718",
+        "type": "ui_slider",
+        "z": "ecbcd336.7102c8",
+        "name": "",
+        "label": "Battery",
+        "tooltip": "",
+        "group": "a3518e38.6289c8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 320,
+        "wires": [
+            [
+                "e9d4ee6c.12156",
+                "72786fcf.f9da68"
+            ]
+        ]
+    },
+    {
+        "id": "4f0b36ce.09841",
+        "type": "function",
+        "z": "ecbcd336.7102c8",
+        "name": "Battery",
+        "func": "random = Math.floor ( Math.random() * (100-90) + 90)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 380,
+        "wires": [
+            [
+                "72786fcf.f9da68",
+                "e9d4ee6c.12156"
+            ]
+        ]
+    },
+    {
+        "id": "72786fcf.f9da68",
+        "type": "debug",
+        "z": "ecbcd336.7102c8",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "790beb82.95578c",
+        "type": "inject",
+        "z": "ecbcd336.7102c8",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "4f0b36ce.09841"
+            ]
+        ]
+    },
+    {
+        "id": "6facba05.f6d0ec",
+        "type": "mqtt out",
+        "z": "90e5d2e.ed137b",
+        "name": "Communication",
+        "topic": "smarthome/livingroom/battery/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "bccb1dac.82179",
+        "type": "ui_slider",
+        "z": "90e5d2e.ed137b",
+        "name": "",
+        "label": "Battery",
+        "tooltip": "",
+        "group": "34a74bef.fbc65c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 320,
+        "wires": [
+            [
+                "6facba05.f6d0ec",
+                "b9beb365.e89e2"
+            ]
+        ]
+    },
+    {
+        "id": "50e05036.9e0a6",
+        "type": "function",
+        "z": "90e5d2e.ed137b",
+        "name": "Battery",
+        "func": "random = Math.floor ( Math.random() * (100-90) + 90)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 380,
+        "wires": [
+            [
+                "b9beb365.e89e2",
+                "6facba05.f6d0ec"
+            ]
+        ]
+    },
+    {
+        "id": "b9beb365.e89e2",
+        "type": "debug",
+        "z": "90e5d2e.ed137b",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "62f794e.2ee166c",
+        "type": "inject",
+        "z": "90e5d2e.ed137b",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "50e05036.9e0a6"
+            ]
+        ]
+    },
+    {
+        "id": "cd052761.8cedc",
+        "type": "mqtt out",
+        "z": "63536e07.880cf8",
+        "name": "Communication",
+        "topic": "smarthome/backyard/battery/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "e3c2a34c.1f1828",
+        "type": "ui_slider",
+        "z": "63536e07.880cf8",
+        "name": "",
+        "label": "Battery",
+        "tooltip": "",
+        "group": "a179e91c.2dc9e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 320,
+        "wires": [
+            [
+                "cd052761.8cedc",
+                "5f78bb86.1995b4"
+            ]
+        ]
+    },
+    {
+        "id": "a8b60662.de4e08",
+        "type": "function",
+        "z": "63536e07.880cf8",
+        "name": "Battery",
+        "func": "random = Math.floor ( Math.random() * (100-90) + 90)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 380,
+        "wires": [
+            [
+                "5f78bb86.1995b4",
+                "cd052761.8cedc"
+            ]
+        ]
+    },
+    {
+        "id": "5f78bb86.1995b4",
+        "type": "debug",
+        "z": "63536e07.880cf8",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "6e2a55e.84b2eac",
+        "type": "inject",
+        "z": "63536e07.880cf8",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "a8b60662.de4e08"
+            ]
+        ]
     }
 ]
