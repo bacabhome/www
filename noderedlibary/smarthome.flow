@@ -176,15 +176,6 @@
         "willPayload": ""
     },
     {
-        "id": "c6731f20.57cf3",
-        "type": "ui_tab",
-        "z": "",
-        "name": "MQTT",
-        "icon": "Dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "d56e1a17.54f278",
         "type": "ui_tab",
         "z": "",
@@ -942,6 +933,643 @@
         "wires": [
             [
                 "9d70269a.e13238"
+            ]
+        ]
+    },
+    {
+        "id": "c1cba1ad.2eb56",
+        "type": "mqtt out",
+        "z": "a27c6d59.02601",
+        "name": "Communication",
+        "topic": "smarthome/frontyard/humidity/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "84cefab1.c454c8",
+        "type": "ui_slider",
+        "z": "a27c6d59.02601",
+        "name": "",
+        "label": "Humidity",
+        "tooltip": "",
+        "group": "737e47e.0c40cb8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "c1cba1ad.2eb56",
+                "3fa599d4.935d06"
+            ]
+        ]
+    },
+    {
+        "id": "eab238ce.4a3798",
+        "type": "function",
+        "z": "a27c6d59.02601",
+        "name": "Humidity",
+        "func": "random = Math.floor ( Math.random() * (50-40) + 40)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 260,
+        "wires": [
+            [
+                "3fa599d4.935d06",
+                "c1cba1ad.2eb56"
+            ]
+        ]
+    },
+    {
+        "id": "3fa599d4.935d06",
+        "type": "debug",
+        "z": "a27c6d59.02601",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6c80bd8a.44612c",
+        "type": "inject",
+        "z": "a27c6d59.02601",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "eab238ce.4a3798"
+            ]
+        ]
+    },
+    {
+        "id": "2ec8e28e.f52ff6",
+        "type": "mqtt out",
+        "z": "cc9bf7ba.a07ab8",
+        "name": "Communication",
+        "topic": "smarthome/masterbedroom/humidity/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c0997677.7ebaf",
+        "type": "ui_slider",
+        "z": "cc9bf7ba.a07ab8",
+        "name": "",
+        "label": "Humidity",
+        "tooltip": "",
+        "group": "2e3e094d.cfa58e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "2ec8e28e.f52ff6",
+                "4d0142ec.63a164"
+            ]
+        ]
+    },
+    {
+        "id": "cb4a4501.87bda8",
+        "type": "function",
+        "z": "cc9bf7ba.a07ab8",
+        "name": "Humidity",
+        "func": "random = Math.floor ( Math.random() * (50-40) + 40)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 260,
+        "wires": [
+            [
+                "4d0142ec.63a164",
+                "2ec8e28e.f52ff6"
+            ]
+        ]
+    },
+    {
+        "id": "4d0142ec.63a164",
+        "type": "debug",
+        "z": "cc9bf7ba.a07ab8",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "301763c.67c681c",
+        "type": "inject",
+        "z": "cc9bf7ba.a07ab8",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "cb4a4501.87bda8"
+            ]
+        ]
+    },
+    {
+        "id": "3f086460.50028c",
+        "type": "mqtt out",
+        "z": "5c675851.04b6a",
+        "name": "Communication",
+        "topic": "smarthome/bathroom/humidity/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "de878540.a9a44",
+        "type": "ui_slider",
+        "z": "5c675851.04b6a",
+        "name": "",
+        "label": "Humidity",
+        "tooltip": "",
+        "group": "79e92fc7.5f583",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "3f086460.50028c",
+                "b389e1a4.01abb8"
+            ]
+        ]
+    },
+    {
+        "id": "f0cd00bd.e9e93",
+        "type": "function",
+        "z": "5c675851.04b6a",
+        "name": "Humidity",
+        "func": "random = Math.floor ( Math.random() * (50-40) + 40)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 260,
+        "wires": [
+            [
+                "b389e1a4.01abb8",
+                "3f086460.50028c"
+            ]
+        ]
+    },
+    {
+        "id": "b389e1a4.01abb8",
+        "type": "debug",
+        "z": "5c675851.04b6a",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a4155b96.418738",
+        "type": "inject",
+        "z": "5c675851.04b6a",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "f0cd00bd.e9e93"
+            ]
+        ]
+    },
+    {
+        "id": "57470112.e58018",
+        "type": "mqtt out",
+        "z": "f6d725c.4322a58",
+        "name": "Communication",
+        "topic": "smarthome/guestbedroom/humidity/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "696b47c.0a620b8",
+        "type": "ui_slider",
+        "z": "f6d725c.4322a58",
+        "name": "",
+        "label": "Humidity",
+        "tooltip": "",
+        "group": "37f1d1b8.7229fe",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "57470112.e58018",
+                "bd7c644f.e75878"
+            ]
+        ]
+    },
+    {
+        "id": "463b3ad.5aac344",
+        "type": "function",
+        "z": "f6d725c.4322a58",
+        "name": "Humidity",
+        "func": "random = Math.floor ( Math.random() * (50-40) + 40)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 260,
+        "wires": [
+            [
+                "bd7c644f.e75878",
+                "57470112.e58018"
+            ]
+        ]
+    },
+    {
+        "id": "bd7c644f.e75878",
+        "type": "debug",
+        "z": "f6d725c.4322a58",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "4e5f9846.72723",
+        "type": "inject",
+        "z": "f6d725c.4322a58",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "463b3ad.5aac344"
+            ]
+        ]
+    },
+    {
+        "id": "dcb0038d.75ee08",
+        "type": "mqtt out",
+        "z": "ecbcd336.7102c8",
+        "name": "Communication",
+        "topic": "smarthome/kitchen/humidity/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "4ceed19.39c113",
+        "type": "ui_slider",
+        "z": "ecbcd336.7102c8",
+        "name": "",
+        "label": "Humidity",
+        "tooltip": "",
+        "group": "a3518e38.6289c8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "dcb0038d.75ee08",
+                "194e29ce.b357e6"
+            ]
+        ]
+    },
+    {
+        "id": "52d042a3.1f4f14",
+        "type": "function",
+        "z": "ecbcd336.7102c8",
+        "name": "Humidity",
+        "func": "random = Math.floor ( Math.random() * (50-40) + 40)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 260,
+        "wires": [
+            [
+                "194e29ce.b357e6",
+                "dcb0038d.75ee08"
+            ]
+        ]
+    },
+    {
+        "id": "194e29ce.b357e6",
+        "type": "debug",
+        "z": "ecbcd336.7102c8",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "328ee892.ba93d",
+        "type": "inject",
+        "z": "ecbcd336.7102c8",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "52d042a3.1f4f14"
+            ]
+        ]
+    },
+    {
+        "id": "ab92e35d.9307c8",
+        "type": "mqtt out",
+        "z": "90e5d2e.ed137b",
+        "name": "Communication",
+        "topic": "smarthome/livingroom/humidity/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1d7e42da.326cbd",
+        "type": "ui_slider",
+        "z": "90e5d2e.ed137b",
+        "name": "",
+        "label": "Humidity",
+        "tooltip": "",
+        "group": "34a74bef.fbc65c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "ab92e35d.9307c8",
+                "f0d25ae9.6b362"
+            ]
+        ]
+    },
+    {
+        "id": "82a1d249.9e668",
+        "type": "function",
+        "z": "90e5d2e.ed137b",
+        "name": "Humidity",
+        "func": "random = Math.floor ( Math.random() * (50-40) + 40)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 260,
+        "wires": [
+            [
+                "f0d25ae9.6b362",
+                "ab92e35d.9307c8"
+            ]
+        ]
+    },
+    {
+        "id": "f0d25ae9.6b362",
+        "type": "debug",
+        "z": "90e5d2e.ed137b",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "490c898e.92ba38",
+        "type": "inject",
+        "z": "90e5d2e.ed137b",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "82a1d249.9e668"
+            ]
+        ]
+    },
+    {
+        "id": "ebf2f33d.8ec418",
+        "type": "mqtt out",
+        "z": "63536e07.880cf8",
+        "name": "Communication",
+        "topic": "smarthome/backyard/humidity/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "ed7de758.5b4328",
+        "x": 620,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8e17c8e2.809878",
+        "type": "ui_slider",
+        "z": "63536e07.880cf8",
+        "name": "",
+        "label": "Humidity",
+        "tooltip": "",
+        "group": "a179e91c.2dc9e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "ebf2f33d.8ec418",
+                "c7b98d95.fb0628"
+            ]
+        ]
+    },
+    {
+        "id": "4514d0f7.af7668",
+        "type": "function",
+        "z": "63536e07.880cf8",
+        "name": "Humidity",
+        "func": "random = Math.floor ( Math.random() * (50-40) + 40)\nmsg.payload = random;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 260,
+        "wires": [
+            [
+                "c7b98d95.fb0628",
+                "ebf2f33d.8ec418"
+            ]
+        ]
+    },
+    {
+        "id": "c7b98d95.fb0628",
+        "type": "debug",
+        "z": "63536e07.880cf8",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "95ff85fd.aaa3f8",
+        "type": "inject",
+        "z": "63536e07.880cf8",
+        "name": "Interval",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "4514d0f7.af7668"
             ]
         ]
     }
