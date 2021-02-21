@@ -1,1 +1,177 @@
-[{"id":"cc426d57.ccbff","type":"tab","label":"Flow 3","disabled":false,"info":""},{"id":"abbcdfd7.a60c68","type":"tab","label":"MQTT","disabled":false,"info":""},{"id":"9da8bc31.eac6c","type":"ui_base","theme":{"name":"theme-light","lightTheme":{"default":"#0094CE","baseColor":"#0094CE","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":false},"darkTheme":{"default":"#097479","baseColor":"#097479","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":false},"customTheme":{"name":"Untitled Theme 1","default":"#4B7930","baseColor":"#4B7930","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"},"themeState":{"base-color":{"default":"#0094CE","value":"#0094CE","edited":false},"page-titlebar-backgroundColor":{"value":"#0094CE","edited":false},"page-backgroundColor":{"value":"#fafafa","edited":false},"page-sidebar-backgroundColor":{"value":"#ffffff","edited":false},"group-textColor":{"value":"#1bbfff","edited":false},"group-borderColor":{"value":"#ffffff","edited":false},"group-backgroundColor":{"value":"#ffffff","edited":false},"widget-textColor":{"value":"#111111","edited":false},"widget-backgroundColor":{"value":"#0094ce","edited":false},"widget-borderColor":{"value":"#ffffff","edited":false},"base-font":{"value":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"}},"angularTheme":{"primary":"indigo","accents":"blue","warn":"red","background":"grey"}},"site":{"name":"Node-RED Dashboard","hideToolbar":"false","allowSwipe":"false","lockMenu":"false","allowTempTheme":"true","dateFormat":"DD/MM/YYYY","sizes":{"sx":48,"sy":48,"gx":6,"gy":6,"cx":6,"cy":6,"px":0,"py":0}}},{"id":"e0c16488.0762d","type":"ui_group","z":"","name":"MQTT","tab":"6cc11304.107864","order":1,"disp":true,"width":"6","collapse":false},{"id":"6cc11304.107864","type":"ui_tab","z":"","name":"MQTT","icon":"Dashboard","disabled":false,"hidden":false},{"id":"54d0811e.e7ca5","type":"mqtt-broker","z":"","name":"","broker":"127.0.0.1","port":"1883","clientid":"","usetls":false,"compatmode":true,"keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","closeTopic":"","closeQos":"0","closePayload":"","willTopic":"","willQos":"0","willPayload":""},{"id":"9d3887d3.5244","type":"ui_group","z":"","name":"MQTT","tab":"b6303298.3999b8","order":1,"disp":true,"width":"6","collapse":false},{"id":"b6303298.3999b8","type":"ui_tab","z":"","name":"MQTT","icon":"Dashboard","disabled":false,"hidden":false},{"id":"3449f9f7.bef38e","type":"mqtt out","z":"abbcdfd7.a60c68","name":"Binary Sensors MQTT","topic":"binary_sensors/mqtt/state_topic","qos":"","retain":"","broker":"54d0811e.e7ca5","x":520,"y":60,"wires":[]},{"id":"b9963e91.8c155","type":"mqtt out","z":"abbcdfd7.a60c68","name":"Sensors MQTT","topic":"sensors/mqtt/state_topic","qos":"","retain":"","broker":"54d0811e.e7ca5","x":500,"y":140,"wires":[]},{"id":"1fe84771.1156e9","type":"ui_slider","z":"abbcdfd7.a60c68","name":"","label":"Sensors MQTT","tooltip":"","group":"9d3887d3.5244","order":1,"width":0,"height":0,"passthru":true,"outs":"all","topic":"","min":0,"max":"100","step":1,"x":160,"y":140,"wires":[["b9963e91.8c155"]]},{"id":"9c69b227.8146f8","type":"ui_switch","z":"abbcdfd7.a60c68","name":"","label":"Switches MQTT","tooltip":"","group":"9d3887d3.5244","order":3,"width":0,"height":0,"passthru":true,"decouple":"false","topic":"","style":"","onvalue":"ON","onvalueType":"str","onicon":"","oncolor":"","offvalue":"OFF","offvalueType":"str","officon":"","offcolor":"","x":160,"y":220,"wires":[["43bd27c9.00fc5"]]},{"id":"43bd27c9.00fc5","type":"mqtt out","z":"abbcdfd7.a60c68","name":"Switches MQTT","topic":"switches/mqtt/state_topic","qos":"","retain":"","broker":"54d0811e.e7ca5","x":500,"y":220,"wires":[]},{"id":"7a9bd892.c647f8","type":"ui_switch","z":"abbcdfd7.a60c68","name":"","label":"Binary Sensors MQTT","tooltip":"","group":"9d3887d3.5244","order":2,"width":0,"height":0,"passthru":true,"decouple":"false","topic":"","style":"","onvalue":"ON","onvalueType":"str","onicon":"","oncolor":"","offvalue":"OFF","offvalueType":"str","officon":"","offcolor":"","x":140,"y":60,"wires":[["3449f9f7.bef38e"]]}]
+[
+    {
+        "id": "abbcdfd7.a60c68",
+        "type": "tab",
+        "label": "MQTT",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3449f9f7.bef38e",
+        "type": "mqtt out",
+        "z": "abbcdfd7.a60c68",
+        "name": "Binary Sensors MQTT",
+        "topic": "binary_sensors/mqtt/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "54d0811e.e7ca5",
+        "x": 520,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b9963e91.8c155",
+        "type": "mqtt out",
+        "z": "abbcdfd7.a60c68",
+        "name": "Sensors MQTT",
+        "topic": "sensors/mqtt/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "54d0811e.e7ca5",
+        "x": 500,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "1fe84771.1156e9",
+        "type": "ui_slider",
+        "z": "abbcdfd7.a60c68",
+        "name": "",
+        "label": "Sensors MQTT",
+        "tooltip": "",
+        "group": "9d3887d3.5244",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "b9963e91.8c155"
+            ]
+        ]
+    },
+    {
+        "id": "9c69b227.8146f8",
+        "type": "ui_switch",
+        "z": "abbcdfd7.a60c68",
+        "name": "",
+        "label": "Switches MQTT",
+        "tooltip": "",
+        "group": "9d3887d3.5244",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 160,
+        "y": 220,
+        "wires": [
+            [
+                "43bd27c9.00fc5"
+            ]
+        ]
+    },
+    {
+        "id": "43bd27c9.00fc5",
+        "type": "mqtt out",
+        "z": "abbcdfd7.a60c68",
+        "name": "Switches MQTT",
+        "topic": "switches/mqtt/state_topic",
+        "qos": "",
+        "retain": "",
+        "broker": "54d0811e.e7ca5",
+        "x": 500,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "7a9bd892.c647f8",
+        "type": "ui_switch",
+        "z": "abbcdfd7.a60c68",
+        "name": "",
+        "label": "Binary Sensors MQTT",
+        "tooltip": "",
+        "group": "9d3887d3.5244",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 140,
+        "y": 60,
+        "wires": [
+            [
+                "3449f9f7.bef38e"
+            ]
+        ]
+    },
+    {
+        "id": "54d0811e.e7ca5",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "127.0.0.1",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "9d3887d3.5244",
+        "type": "ui_group",
+        "z": "",
+        "name": "MQTT",
+        "tab": "b6303298.3999b8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b6303298.3999b8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "MQTT",
+        "icon": "Dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
